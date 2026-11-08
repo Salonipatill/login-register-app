@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ 
+
+body{
+    background-color:#f5f7fc;
+    font-family:Arial, sans-serif;
+}
+
+form{
+    width: 100%;
+    max-width:400px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+
+    /* display: grid helps us divide a webpage into rows and columns. */
+}
+
+/* 
+When flex-direction: column:
+- justify-content = Vertical alignment.
+- align-items = Horizontal alignment.
+When flex-direction: row, their directions are reversed. */
+
+
+
+.left-section{
+    background-color:#17284D;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding:30px;
+    min-height:100vh;
+
+    background-image: url("images/coding-girl.avif");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+
+.right-section{
+    background-color:#FFFFFF;
+    color:#667085;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content: center;
+    align-items:center;
+
+    padding:30px;
+    min-height:100vh;
+
+
+    
+}
+
+h1{
+    color: #17284D;
+    font-size:32px;
+    margin-bottom: 10px;
+}
+
+
+button{
+    background-color: #6C63FF;
+    color:#FFFFFF;
+
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor:pointer;
+    /* Shows hand cursor on hover */
+}
+    /* min-height ensures the section fills at least the screen height. */
+
+
+
+/* We use a space to separate the two columns.
+- First 1fr = Left column.
+- Second 1fr = Right column. */
