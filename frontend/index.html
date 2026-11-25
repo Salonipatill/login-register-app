@@ -31,9 +31,18 @@
 
 <body><!--contains everythings that users can see and interact with it-->
 
+
+<div class="main-wrapper">
+
 <main class="container">
 
 <section class="left-section">
+
+    <img src="images/coding-girl.avif" alt="Coding-girl">
+
+    <div class="welcome-content">
+
+   
 
     <h2>
 
@@ -44,6 +53,7 @@
     
     </h2>
     <p>Learn, Create and Innovate.</p>
+     </div>
 
 </section>
 
@@ -61,7 +71,7 @@
 <div>
 <label for="full_name">Full Name:</label>
 
-<input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+<input type="text" id="full_name" name="full_name" placeholder="Enter your full name" minlength="8" maxlength="40" required>
 </div>
 
 <div>
@@ -106,12 +116,15 @@ required>
 
 
 <button type="submit">Create Account</button>
+<p id="form-message" role="status"></p>
 
 </form>
 </section>
 
 </main>
 
+
+</div>
 
 <script src="script.js"></script>
 
