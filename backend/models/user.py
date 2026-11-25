@@ -1,6 +1,9 @@
 from sqlalchemy import Column, Integer, String
 from database.connection import Base 
 
+ 
+
+
 class User(Base):
 
  #__tablename__ is a special attribute used by SQLAlchemy to specify the name of the database table associated with a model.
@@ -9,15 +12,29 @@ class User(Base):
 
 
 
+
 #Column() → SQLAlchemy function used to define a database column.
 #constraints → rules for the column, such as requiring a value or preventing duplicates
 #DataType → the type of data the column stores.
 #we can write variable names in uppercase or lowercase  both
+
 
     ID = Column(Integer, primary_key=True, index=True)
     FULL_NAME = Column(String(100), nullable=False)
     HASHED_PASSWORD= Column(String(255), nullable=False)
     EMAIL  = Column(String(255), unique=True, nullable=False)
 
+
+
+
+#PascalCase is a naming style in programming in which:
+#- The first letter of every word is capital.
+#- There are no spaces or underscores between words.
+
+
+
+# UserProfile → PascalCase
+# user_profile → snake_case
+# USER_PROFILE → UPPER_SNAKE_CASE
 
  

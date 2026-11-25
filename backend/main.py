@@ -9,10 +9,16 @@
 
 
  
-from fastapi import FastAPI
-from fastapi import APIRouter
-
+from fastapi import FastAPI, APIRouter
  
+from routes.registration import  router
+from fastapi.middleware.cors import CORSMiddleware
+
+# middleware is software that processes requests and responses.
+# CORS means Cross-Origin Resource Sharing.
+# CORSMiddleware is provided by FastAPI through Starlette.
+
+
 #app
 #This is a Python variable that holds the FastAPI application instance. We use app to register endpoints and configure the application.
 
@@ -37,15 +43,30 @@ app =FastAPI(
 
 #When we use a router, we still use app, but we define the endpoints using router instead of app in that separate file.
 
-router = APIRouter(
-    prefix = "/api/auth",
-    tags = ["Registration"]
+
+app.add_middleware(
+     CORSMiddleware,
+    allow_origins =["http://127.0.0.1:5500",
+                      "http://localhost:5500"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+
 )
 
+# Parameter	Purpose
+# allow_origins	Specifies which frontend origins are allowed
+# allow_credentials	Allows credentials such as cookies
+# allow_methods	Allows HTTP methods such as GET, POST, PUT, DELETE
+# allow_headers	Allows request headers
 
-@router.post("/register")
-def register_user():
-    return{"message" : "Success"}
+
+
+
+
+
+
+app.include_router(router)
 
 
 
